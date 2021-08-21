@@ -92,11 +92,15 @@ int main()
 {
     PriorityQueue q;
 
+    cout<<"Inserting 5,4,10,16,2,11,1 to the priority Queue"<<endl;
+
     q.enqueue(5);
     q.enqueue(4);
     q.enqueue(10);
     q.enqueue(16);
     q.enqueue(2);
+    q.enqueue(11);
+    q.enqueue(1);
 
     cout<<"The size is "<< q.size() <<endl;
     cout<<"The elements in priority Queue are "<<endl;
@@ -104,13 +108,20 @@ int main()
 
     cout<<endl;
     cout<<"The top element is "<<q.top()<<endl;
+    cout<<"Deleting ROOT"<<endl;
     q.dequeue();
 
+    cout<<endl;
     cout<<"The top element is "<<q.top()<<endl;
+    cout<<"Deleting ROOT"<<endl;
     q.dequeue();
 
+    cout<<endl;
     cout<<"The top element is "<<q.top()<<endl;
+    cout<<"Deleting ROOT"<<endl;
     q.dequeue();
 
+    cout<<endl;
+    cout<<"The top element is "<<q.top()<<endl;
 
 }
