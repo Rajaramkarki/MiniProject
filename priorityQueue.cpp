@@ -1,12 +1,14 @@
 #include<iostream>
-#include "minheap.h"
+#include "MinHeap.h"
 #include<conio.h>
+ #include <iostream>
+#include <vector>
+#include <algorithm>
 
-using namespace std;
 
 class PriorityQueue
 {
-    minHeap h;
+    MinHeap h;
 
     public:
         void enqueue(int key);
@@ -41,58 +43,11 @@ void PriorityQueue:: display()
     h.display();
 }
 
-// void menu()
-// {
-//     PriorityQueue q;
-
-//     int choice, key;
-//     system("CLS");
-//     cout<<"*********************************************************************************"<<endl;
-//     cout<<"\n\n\t\t\t    <<<<<:: MENU ::>>>>>\n";
-//     cout<<"\n\t\t\t    1. Insert in Queue";
-//     cout<<"\n\t\t\t    2. Delete Min from Queue";
-//     cout<<"\n\t\t\t    3. Top element in Queue";
-//     cout<<"\n\t\t\t    4. Display Elements in Queue";
-//     cout<<"\n\t\t\t    5. Exit";
-//     cout<<"\n\t\t\t    Enter your choice: ";
-//     cin>>choice;
-//     switch(choice)
-//     {
-//            case 1:
-//             cout<<"Enter a key to insert"<<endl;
-//             cin>>key;
-//             q.enqueue(key);
-//             break;
-
-//            case 2: 
-//             q.dequeue();
-//             break;
-
-//            case 3: 
-//            cout<<q.top();
-//             break;
-
-//             case 4: 
-//            q.display();
-//             break;
-
-//            case 5: break;
-
-//            default: cout<<"\nNo such option...\n\n";
-//                     system("PAUSE");
-//                     menu();
-// 					break;
-//     }
-//     if(choice!=5)
-//        menu();
-// }
-
-
 int main()
 {
     PriorityQueue q;
 
-    cout<<"Inserting 5,4,10,16,2,11,1 to the priority Queue"<<endl;
+    std::cout<<"Inserting 5,4,10,16,2,11,1 to the priority Queue\n";
 
     q.enqueue(5);
     q.enqueue(4);
@@ -102,26 +57,26 @@ int main()
     q.enqueue(11);
     q.enqueue(1);
 
-    cout<<"The size is "<< q.size() <<endl;
-    cout<<"The elements in priority Queue are "<<endl;
+    std::cout<<"The size is "<< q.size() <<"\n";
+    std::cout<<"The elements in priority Queue are "<<"\n";
     q.display();
 
-    cout<<endl;
-    cout<<"The top element is "<<q.top()<<endl;
-    cout<<"Deleting ROOT"<<endl;
+    std::cout<<"\n";
+    std::cout<<"The top element is "<<q.top()<<"\n";
+    std::cout<<"Deleting ROOT"<<"\n";
     q.dequeue();
 
-    cout<<endl;
-    cout<<"The top element is "<<q.top()<<endl;
-    cout<<"Deleting ROOT"<<endl;
+    std::cout<<"\n";
+    std::cout<<"The top element is "<<q.top()<<"\n";
+    std::cout<<"Deleting ROOT"<<"\n";
     q.dequeue();
 
-    cout<<endl;
-    cout<<"The top element is "<<q.top()<<endl;
-    cout<<"Deleting ROOT"<<endl;
+    std::cout<<"\n";
+    std::cout<<"The top element is "<<q.top()<<"\n";
+    std::cout<<"Deleting ROOT"<<"\n";
     q.dequeue();
 
-    cout<<endl;
-    cout<<"The top element is "<<q.top()<<endl;
+    std::cout<<"\n";
+    std::cout<<"The top element is "<<q.top()<<"\n";
 
 }

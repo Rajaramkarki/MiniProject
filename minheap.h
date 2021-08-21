@@ -1,11 +1,10 @@
 #include <iostream>
 #include <vector>
-using namespace std;
 
-class minHeap
+class MinHeap
 {
 private:
-    vector<int> A;
+    std::vector<int> A;
  
     int PARENT(int i);
     int LEFT(int i);

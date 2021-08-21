@@ -1,26 +1,26 @@
 #include <iostream>
 #include <vector>
 #include <stdexcept>
-#include "minheap.h"
-using namespace std;
+#include "minHeap.h"
+
  
 
-int minHeap::PARENT(int i) 
+int MinHeap::PARENT(int i) 
 {
     return (i - 1) / 2;
 }
  
-int minHeap::LEFT(int i) 
+int MinHeap::LEFT(int i) 
 {
     return (2*i + 1);
 }
  
-int minHeap::RIGHT(int i) 
+int MinHeap::RIGHT(int i) 
 {
     return (2*i + 2);
 }
 
-bool minHeap:: empty()
+bool MinHeap:: empty()
 {   
         if(size() == 0)
             return true;
@@ -29,7 +29,7 @@ bool minHeap:: empty()
             return false;
 }
 
-void minHeap::reheap_down(int i)
+void MinHeap::reheap_down(int i)
 {
     int left = LEFT(i);
     int right = RIGHT(i);
@@ -46,22 +46,22 @@ void minHeap::reheap_down(int i)
  
     if (smallest != i)
     {
-        swap(A[i], A[smallest]);
+        std::swap(A[i], A[smallest]);
         reheap_down(smallest);
     }
 }
 
-void minHeap::reheap_up(int i)
+void MinHeap::reheap_up(int i)
 {
      
     if (i && A[PARENT(i)] > A[i])
     {
-        swap(A[i], A[PARENT(i)]);
+        std::swap(A[i], A[PARENT(i)]);
         reheap_up(PARENT(i));
     }
 }
 
-void minHeap::InsertKey(int key)
+void MinHeap::InsertKey(int key)
 {
     A.push_back(key);
  
@@ -69,13 +69,13 @@ void minHeap::InsertKey(int key)
     reheap_up(index);
 }
 
-void minHeap::DeleteKey()
+void MinHeap::DeleteKey()
 {
     try 
     {
         if (size() == 0)
         {
-            throw out_of_range("Heap underflow");
+            throw std::out_of_range("Heap underflow");
         }
  
         A[0] = A.back();
@@ -83,42 +83,42 @@ void minHeap::DeleteKey()
  
         reheap_down(0);
     }
-    catch (const out_of_range &oor) {
-        cout << endl << oor.what();
+    catch (const std::out_of_range &oor) {
+        std::cout << "\n" << oor.what();
     }
 }
  
-int minHeap::top()
+int MinHeap::top()
 {
     try {
         if (size() == 0)
         {
-            throw out_of_range("Heap underflow");
+            throw std::out_of_range("Heap underflow");
         }
  
             return A.at(0);       
         }
-        catch (const out_of_range &oor) {
-            cout << endl << oor.what();
+        catch (const std::out_of_range &oor) {
+            std::cout << "\n" << oor.what();
         }
         return 0;
 }
 
-void minHeap::display()
+void MinHeap::display()
 {
     for(int i=0; i< size(); i++)
     {
-        cout<<A[i]<<" ";
+        std::cout<<A[i]<<" ";
     }
-    cout<<endl;
+    std::cout<<"\n";
 }
 
 // int main()
 // {
-//     ------------------TESTING MINHEAP----------------
+//     ------------------TESTING MinHeap----------------
 
 
-//     minHeap pq;
+//     MinHeap pq;
  
 //     pq.InsertKey(3);
 //     pq.InsertKey(2);
@@ -149,9 +149,7 @@ void minHeap::display()
  
 //     cout << pq.top() << " ";
 //     pq.DeleteKey();
- 
-//     cout << endl << boolalpha << pq.empty();
- 
+  
 //     pq.top();    
 //     pq.DeleteKey();   
 
